@@ -5,13 +5,7 @@ const LoginPage = () => {
   return (
     <View className="flex-1 justify-center px-6 py-12 items-center">
       <View className="mx-auto w-full max-w-sm">
-        <Image
-          className="mx-auto h-10 w-auto"
-          source={{
-            uri: "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600",
-          }}
-          alt="Your Company"
-        />
+        <View className="mx-auto h-20 w-1/2 bg-black" />
         <Text className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </Text>
@@ -37,7 +31,7 @@ const LoginPage = () => {
           </View>
 
           <View>
-            <View className="flex items-center justify-between">
+            <View className="flex flex-row items-center justify-between">
               <Text className="block text-sm font-medium leading-6 text-gray-900">
                 Password
               </Text>
@@ -63,7 +57,7 @@ const LoginPage = () => {
           </View>
 
           <View>
-            <TouchableOpacity className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600">
+            <TouchableOpacity className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600">
               <Text className="text-white text-center">Sign in</Text>
             </TouchableOpacity>
           </View>
