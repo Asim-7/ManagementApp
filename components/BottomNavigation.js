@@ -13,13 +13,12 @@ const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
-      key: "music",
-      title: "Favorites",
-      focusedIcon: "heart",
-      unfocusedIcon: "heart-outline",
+      key: "home",
+      title: "Home",
+      focusedIcon: "home",
     },
-    { key: "albums", title: "Albums", focusedIcon: "album" },
-    { key: "recents", title: "Recents", focusedIcon: "history" },
+    { key: "pupils", title: "Pupils", focusedIcon: "account-multiple" },
+    { key: "payments", title: "Payments", focusedIcon: "credit-card-outline" },
     {
       key: "notifications",
       title: "Notifications",
@@ -29,9 +28,9 @@ const MyComponent = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
+    home: MusicRoute,
+    pupils: AlbumsRoute,
+    payments: RecentsRoute,
     notifications: NotificationsRoute,
   });
 
