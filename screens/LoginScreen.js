@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <View className="flex-1 justify-center px-6 py-12 items-center">
       <View className="mx-auto w-full max-w-sm">
@@ -58,7 +58,14 @@ const LoginScreen = () => {
 
           <View>
             <TouchableOpacity className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600">
-              <Text className="text-white text-center">Sign in</Text>
+              <Text
+                className="text-white text-center"
+                onPress={() =>
+                  navigation.navigate("Home", { email: "test@gmail.com" })
+                }
+              >
+                Sign in
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
