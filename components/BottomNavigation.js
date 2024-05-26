@@ -1,7 +1,7 @@
 import * as React from "react";
+import { View } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
-
-const MusicRoute = () => <Text>Music</Text>;
+import Home from "./Home";
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 
@@ -27,18 +27,22 @@ const MyComponent = () => {
     },
   ]);
 
-  const renderScene = BottomNavigation.SceneMap({
-    home: MusicRoute,
-    pupils: AlbumsRoute,
-    payments: RecentsRoute,
-    notifications: NotificationsRoute,
-  });
-
   return (
     <BottomNavigation
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
-      renderScene={renderScene}
+      renderScene={({ route, jumpTo }) => {
+        switch (route.key) {
+          case "home":
+            return <Home />;
+          case "pupils":
+            return <AlbumsRoute />;
+          case "payments":
+            return <RecentsRoute />;
+          case "notifications":
+            return <NotificationsRoute />;
+        }
+      }}
     />
   );
 };
