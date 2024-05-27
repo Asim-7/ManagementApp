@@ -10,7 +10,9 @@ const Header = ({ navigation }) => {
       </TouchableOpacity>
       <Button title="Button 1" onPress={() => alert("Button 1 pressed")} />
       <Button title="Button 2" onPress={() => alert("Button 2 pressed")} />
-      <Button title="Button 3" onPress={() => alert("Button 3 pressed")} />
+      <TouchableOpacity onPress={() => alert("Account clicked!")}>
+        <Icon source="account" size={28} />
+      </TouchableOpacity>
     </View>
   );
 };
