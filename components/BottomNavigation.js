@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
-import Home from "./Home";
+import HomeScreen from "./HomeScreen";
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 
@@ -34,7 +34,7 @@ const MyComponent = () => {
       renderScene={({ route, jumpTo }) => {
         switch (route.key) {
           case "home":
-            return <Home />;
+            return <HomeScreen />;
           case "pupils":
             return <AlbumsRoute />;
           case "payments":
