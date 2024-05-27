@@ -7,7 +7,5 @@ export default function MainScreen() {
     params: { email },
   } = useRoute();
 
-  console.log("Item ID:", email);
-
-  return <BottomNavigation />;
+  return <BottomNavigation useremail={email} />;
 }

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { View } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import HomeScreen from "./HomeScreen";
 
@@ -9,7 +8,7 @@ const RecentsRoute = () => <Text>Recents</Text>;
 
 const NotificationsRoute = () => <Text>Notifications</Text>;
 
-const MyComponent = () => {
+const MyComponent = ({ useremail }) => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -34,7 +33,7 @@ const MyComponent = () => {
       renderScene={({ route, jumpTo }) => {
         switch (route.key) {
           case "home":
-            return <HomeScreen />;
+            return <HomeScreen useremail={useremail} />;
           case "pupils":
             return <AlbumsRoute />;
           case "payments":
