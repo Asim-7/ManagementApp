@@ -1,12 +1,9 @@
 import * as React from "react";
 import { BottomNavigation, Text } from "react-native-paper";
-import HomeScreen from "./HomeScreen";
-
-const AlbumsRoute = () => <Text>Albums</Text>;
-
-const RecentsRoute = () => <Text>Recents</Text>;
-
-const NotificationsRoute = () => <Text>Notifications</Text>;
+import HomeScreen from "../screens/HomeScreen";
+import PupilsScreen from "../screens/PupilsScreen";
+import PaymentsScreen from "../screens/PaymentsScreen";
+import NotificationsScreen from "../screens/NotificationsScreen";
 
 const MyComponent = ({ useremail }) => {
   const [index, setIndex] = React.useState(0);
@@ -35,11 +32,11 @@ const MyComponent = ({ useremail }) => {
           case "home":
             return <HomeScreen useremail={useremail} />;
           case "pupils":
-            return <AlbumsRoute />;
+            return <PupilsScreen />;
           case "payments":
-            return <RecentsRoute />;
+            return <PaymentsScreen />;
           case "notifications":
-            return <NotificationsRoute />;
+            return <NotificationsScreen />;
         }
       }}
     />
