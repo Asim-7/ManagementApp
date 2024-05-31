@@ -1,7 +1,7 @@
-import { View, useWindowDimensions } from "react-native";
+import { View, useWindowDimensions, Text } from "react-native";
 import PupilsHeader from "../components/PupilsHeader ";
 import * as React from "react";
-import { TabView } from "react-native-tab-view";
+import { TabView, TabBar } from "react-native-tab-view";
 import PaymentsScreen from "../screens/PaymentsScreen";
 import NotificationsScreen from "../screens/NotificationsScreen";
 
@@ -16,25 +16,43 @@ export default function PupilsScreen() {
     { key: "enquiries", title: "Enquiries" },
   ]);
 
+  const renderScene = ({ route }) => {
+    switch (route.key) {
+      case "active":
+        return <PaymentsScreen />;
+      case "waiting":
+        return <NotificationsScreen />;
+      case "inactive":
+        return <PaymentsScreen />;
+      case "enquiries":
+        return <NotificationsScreen />;
+      default:
+        return null;
+    }
+  };
+
+  const renderTabBar = (props) => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: "blue" }}
+      style={{ backgroundColor: "white" }}
+      renderLabel={({ route, focused, color }) => (
+        <Text style={{ color: focused ? "blue" : "gray", margin: 8 }}>
+          {route.title}
+        </Text>
+      )}
+    />
+  );
+
   return (
     <View className="flex-1">
       <PupilsHeader />
       <TabView
         navigationState={{ index, routes }}
-        renderScene={({ route, jumpTo }) => {
-          switch (route.key) {
-            case "active":
-              return <PaymentsScreen />;
-            case "waiting":
-              return <NotificationsScreen />;
-            case "inactive":
-              return <PaymentsScreen />;
-            case "enquiries":
-              return <NotificationsScreen />;
-          }
-        }}
+        renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        renderTabBar={renderTabBar}
       />
     </View>
   );
