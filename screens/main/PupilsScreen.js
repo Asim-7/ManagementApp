@@ -1,9 +1,9 @@
 import { View, useWindowDimensions, Text } from "react-native";
-import PupilsHeader from "../components/PupilsHeader ";
+import PupilsHeader from "../../components/PupilsHeader ";
 import * as React from "react";
 import { TabView, TabBar } from "react-native-tab-view";
-import PaymentsScreen from "../screens/PaymentsScreen";
-import NotificationsScreen from "../screens/NotificationsScreen";
+import PaymentsScreen from "./PaymentsScreen";
+import NotificationsScreen from "./NotificationsScreen";
 
 export default function PupilsScreen() {
   const layout = useWindowDimensions();
