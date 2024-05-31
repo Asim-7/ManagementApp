@@ -13,7 +13,6 @@ export default function PupilsScreen() {
     { key: "active", title: "Active" },
     { key: "waiting", title: "Waiting" },
     { key: "inactive", title: "Inactive" },
-    { key: "enquiries", title: "Enquiries" },
   ]);
 
   const renderScene = ({ route }) => {
@@ -24,8 +23,6 @@ export default function PupilsScreen() {
         return <NotificationsScreen />;
       case "inactive":
         return <PaymentsScreen />;
-      case "enquiries":
-        return <NotificationsScreen />;
       default:
         return null;
     }
