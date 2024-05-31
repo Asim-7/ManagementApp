@@ -5,7 +5,17 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View className="flex-1 justify-center px-6 py-12 items-center">
       <View className="mx-auto w-full max-w-sm">
-        <View className="mx-auto h-20 w-1/2 bg-black" />
+        <Image
+          className="mx-auto"
+          source={{
+            uri: "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg",
+          }}
+          style={{
+            width: 250,
+            height: 150,
+            borderRadius: 20,
+          }}
+        />
         <Text className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </Text>
