@@ -2,8 +2,6 @@ import { View, useWindowDimensions, Text, FlatList } from "react-native";
 import PupilsHeader from "../../components/PupilsHeader ";
 import React, { useState } from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import PaymentsScreen from "./PaymentsScreen";
-import NotificationsScreen from "./NotificationsScreen";
 import sampleData from "../../testData/sampleData.json";
 
 const renderItem = ({ item }) => (
