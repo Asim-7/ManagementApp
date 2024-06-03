@@ -12,7 +12,7 @@ const renderItem = ({ item }) => (
   >
     <Image
       source={{
-        uri: "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg",
+        uri: item.pic,
       }}
       style={{
         width: 50,
@@ -26,7 +26,7 @@ const renderItem = ({ item }) => (
       </Text>
       <Text style={{ flex: 1, color: "royalblue" }}>{item.lesson}</Text>
     </View>
-    <Text style={{ flex: 1, color: "green" }}>{item.credit}</Text>
+    <Text style={{ flex: 0.7, color: "green" }}>{item.credit}</Text>
     <Icon source="chevron-right" size={28} />
   </View>
 );

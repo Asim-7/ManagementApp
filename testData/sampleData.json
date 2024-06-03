@@ -5,25 +5,29 @@
         "id": 1,
         "name": "Dawn Bowles",
         "lesson": "Lesson 05 Apr 11:15",
-        "credit": "1 hr credit"
+        "credit": "1 hr credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       },
       {
         "id": 2,
         "name": "Emma Murray",
         "lesson": "Lesson 02 Apr 10:15",
-        "credit": "2 hrs credit"
+        "credit": "2 hrs credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       },
       {
         "id": 3,
         "name": "James Barry",
         "lesson": "Lesson 03 Apr 09:00",
-        "credit": "3 hrs credit"
+        "credit": "3 hrs credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       },
       {
         "id": 4,
         "name": "Leonore Tauro",
         "lesson": "Lesson 02 Apr 13:30",
-        "credit": "0 hrs credit"
+        "credit": "0 hrs credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       }
     ],
     "waiting": [
@@ -31,7 +35,8 @@
         "id": 5,
         "name": "Matthew Seddon",
         "lesson": "Lesson 03 Apr 14:45",
-        "credit": "1 hr credit"
+        "credit": "1 hr credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       }
     ],
     "inactive": [
@@ -39,7 +44,8 @@
         "id": 6,
         "name": "Naomi Ratcliffe",
         "lesson": "Lesson 03 Apr 13:30",
-        "credit": "2 hrs credit"
+        "credit": "2 hrs credit",
+        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
       }
     ]
   }
