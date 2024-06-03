@@ -16,7 +16,7 @@ const ActiveRoute = () => (
   <FlatList
     data={sampleData.categories.active}
     renderItem={renderItem}
-    keyExtractor={(item) => item.name}
+    keyExtractor={(item) => item.id}
   />
 );
 
@@ -24,7 +24,7 @@ const WaitingRoute = () => (
   <FlatList
     data={sampleData.categories.waiting}
     renderItem={renderItem}
-    keyExtractor={(item) => item.name}
+    keyExtractor={(item) => item.id}
   />
 );
 
@@ -32,7 +32,7 @@ const InactiveRoute = () => (
   <FlatList
     data={sampleData.categories.inactive}
     renderItem={renderItem}
-    keyExtractor={(item) => item.name}
+    keyExtractor={(item) => item.id}
   />
 );
 
