@@ -20,8 +20,12 @@ const renderItem = ({ item }) => (
         borderRadius: 25,
       }}
     />
-    <Text style={{ flex: 1, marginStart: 10 }}>{item.name}</Text>
-    <Text style={{ flex: 1 }}>{item.lesson}</Text>
+    <View className="flex-1 flex-col" style={{ marginStart: 10 }}>
+      <Text style={{ flex: 1, fontWeight: "bold", fontSize: 17 }}>
+        {item.name}
+      </Text>
+      <Text style={{ flex: 1, color: "royalblue" }}>{item.lesson}</Text>
+    </View>
     <Text style={{ flex: 1, color: "green" }}>{item.credit}</Text>
     <Icon source="chevron-right" size={28} />
   </View>
