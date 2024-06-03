@@ -1,14 +1,29 @@
-import { View, useWindowDimensions, Text, FlatList } from "react-native";
+import { View, useWindowDimensions, Text, FlatList, Image } from "react-native";
 import PupilsHeader from "../../components/PupilsHeader ";
 import React, { useState } from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import sampleData from "../../testData/sampleData.json";
+import { Icon } from "react-native-paper";
 
 const renderItem = ({ item }) => (
-  <View style={{ flexDirection: "row", padding: 10 }}>
-    <Text style={{ flex: 1 }}>{item.name}</Text>
+  <View
+    style={{ flexDirection: "row", padding: 10 }}
+    className="justify-center items-center"
+  >
+    <Image
+      source={{
+        uri: "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg",
+      }}
+      style={{
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+      }}
+    />
+    <Text style={{ flex: 1, marginStart: 10 }}>{item.name}</Text>
     <Text style={{ flex: 1 }}>{item.lesson}</Text>
     <Text style={{ flex: 1, color: "green" }}>{item.credit}</Text>
+    <Icon source="chevron-right" size={28} />
   </View>
 );
 
