@@ -3,6 +3,7 @@ import { Text, TouchableOpacity } from "react-native";
 import { Agenda } from "react-native-calendars";
 
 // Calendar reference: https://www.npmjs.com/package/react-native-calendars
+// Guide: https://wix.github.io/react-native-calendars/docs/Intro
 // Link: https://blog.logrocket.com/create-customizable-shareable-calendars-react-native/
 
 export default function CustomCalendar(props) {
