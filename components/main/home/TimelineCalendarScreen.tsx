@@ -13,7 +13,7 @@ import {
   CalendarUtils,
 } from "react-native-calendars";
 
-import { timelineEvents, getDate } from "../../testData/timelineEvents";
+import { timelineEvents, getDate } from "../../../testData/timelineEvents";
 
 const INITIAL_TIME = { hour: 9, minutes: 0 };
 const EVENTS: TimelineEventProps[] = timelineEvents;

@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import PupilsHeader from "../../components/PupilsHeader ";
+import PupilsHeader from "../../../components/PupilsHeader ";
 import React, { useState } from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import sampleData from "../../testData/sampleData.json";
+import sampleData from "../../../testData/sampleData.json";
 import { Icon } from "react-native-paper";
 
 export default function PupilsScreen() {

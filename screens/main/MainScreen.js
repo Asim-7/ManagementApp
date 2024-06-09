@@ -1,6 +1,6 @@
 import React from "react";
 import { useRoute } from "@react-navigation/native";
-import BottomNavigation from "../../components/BottomNavigation";
+import BottomNavigation from "../../components/main/BottomNavigation";
 
 export default function MainScreen() {
   const {

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { BottomNavigation, Text } from "react-native-paper";
-import HomeScreen from "../screens/main/HomeScreen";
-import PupilsScreen from "../screens/main/PupilsScreen";
-import PaymentsScreen from "../screens/main/PaymentsScreen";
-import NotificationsScreen from "../screens/main/NotificationsScreen";
+import HomeScreen from "../../screens/main/sub_screens/HomeScreen";
+import PupilsScreen from "../../screens/main/sub_screens/PupilsScreen";
+import PaymentsScreen from "../../screens/main/sub_screens/PaymentsScreen";
+import NotificationsScreen from "../../screens/main/sub_screens/NotificationsScreen";
 
 const MyComponent = ({ useremail }) => {
   const [index, setIndex] = React.useState(0);
