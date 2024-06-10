@@ -14,6 +14,7 @@ import {
 } from "react-native-calendars";
 
 import { timelineEvents, getDate } from "../../../testData/timelineEvents";
+import EditEventModal from "./EditEventModal";
 
 const INITIAL_TIME = { hour: 9, minutes: 0 };
 const EVENTS: TimelineEventProps[] = timelineEvents;
@@ -26,6 +27,8 @@ export default class TimelineCalendarScreen extends Component {
     ) as {
       [key: string]: TimelineEventProps[];
     },
+    modalVisible: false,
+    selectedEvent: null,
   };
 
   marked = {
@@ -122,12 +125,31 @@ export default class TimelineCalendarScreen extends Component {
     ]);
   };
 
+  editEvent = (event) => {
+    this.setState({
+      modalVisible: true,
+      selectedEvent: event,
+    });
+  };
+
+  handleSaveEvent = (updatedEvent) => {
+    const { eventsByDate } = this.state;
+    const dateKey = CalendarUtils.getCalendarDateString(updatedEvent.start);
+
+    const updatedEvents = eventsByDate[dateKey].map((e) => {
+      if (e.id === updatedEvent.id) {
+        return updatedEvent;
+      }
+      return e;
+    });
+
+    this.setState({
+      eventsByDate: { ...eventsByDate, [dateKey]: updatedEvents },
+    });
+  };
+
   onEventPress = (event) => {
-    // Handle the event press, for example, show an alert with event details
-    Alert.alert(
-      "Event Pressed",
-      `You pressed on event: \n${event.id}\n${event.title}\n${event.start}\n${event.end}\n${event.summary}\n${event.color}`
-    );
+    this.editEvent(event);
   };
 
   private timelineProps: Partial<TimelineProps> = {
@@ -148,7 +170,8 @@ export default class TimelineCalendarScreen extends Component {
   };
 
   render() {
-    const { currentDate, eventsByDate } = this.state;
+    const { currentDate, eventsByDate, modalVisible, selectedEvent } =
+      this.state;
 
     return (
       <CalendarProvider
@@ -173,6 +196,14 @@ export default class TimelineCalendarScreen extends Component {
           //scrollToFirst
           initialTime={INITIAL_TIME}
         />
+        {selectedEvent && (
+          <EditEventModal
+            isVisible={modalVisible}
+            event={selectedEvent}
+            onClose={() => this.setState({ modalVisible: false })}
+            onSave={this.handleSaveEvent}
+          />
+        )}
       </CalendarProvider>
     );
   }
