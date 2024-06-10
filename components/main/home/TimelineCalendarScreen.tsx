@@ -81,8 +81,10 @@ export default class TimelineCalendarScreen extends Component {
   };
 
   approveNewEvent = (timeString, timeObject) => {
+    const { eventsByDate } = this.state;
     const hourString = `${(timeObject.hour + 1).toString().padStart(2, "0")}`;
     const minutesString = `${timeObject.minutes.toString().padStart(2, "0")}`;
+
     this.setState({
       modalVisible: true,
       selectedEvent: {
@@ -96,6 +98,18 @@ export default class TimelineCalendarScreen extends Component {
       isNewEvent: true,
       newEventStartTime: timeObject.date,
     });
+
+    // removing draft once the modal is visible at the top of draft
+    if (timeObject.date) {
+      eventsByDate[timeObject.date] = filter(
+        eventsByDate[timeObject.date],
+        (e) => e.id !== "draft"
+      );
+
+      this.setState({
+        eventsByDate,
+      });
+    }
   };
 
   handleSaveEvent = (updatedEvent) => {
@@ -123,6 +137,10 @@ export default class TimelineCalendarScreen extends Component {
       isNewEvent: false,
       newEventStartTime: null,
     });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ modalVisible: false });
   };
 
   editEvent = (event) => {
@@ -190,7 +208,7 @@ export default class TimelineCalendarScreen extends Component {
           <EditEventModal
             isVisible={modalVisible}
             event={selectedEvent}
-            onClose={() => this.setState({ modalVisible: false })}
+            onClose={this.handleCloseModal}
             onSave={this.handleSaveEvent}
             isNew={isNewEvent}
           />
