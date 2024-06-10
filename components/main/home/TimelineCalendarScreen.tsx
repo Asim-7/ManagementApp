@@ -122,10 +122,19 @@ export default class TimelineCalendarScreen extends Component {
     ]);
   };
 
+  onEventPress = (event) => {
+    // Handle the event press, for example, show an alert with event details
+    Alert.alert(
+      "Event Pressed",
+      `You pressed on event: \n${event.id}\n${event.title}\n${event.start}\n${event.end}\n${event.summary}\n${event.color}`
+    );
+  };
+
   private timelineProps: Partial<TimelineProps> = {
     format24h: true,
     onBackgroundLongPress: this.createNewEvent,
     onBackgroundLongPressOut: this.approveNewEvent,
+    onEventPress: this.onEventPress,
     // scrollToFirst: true,
     // start: 0,
     // end: 24,
@@ -133,6 +142,7 @@ export default class TimelineCalendarScreen extends Component {
       { start: 0, end: 6 },
       { start: 22, end: 24 },
     ],
+    unavailableHoursColor: "linen",
     overlapEventsSpacing: 8,
     rightEdgeSpacing: 24,
   };
