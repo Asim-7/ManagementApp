@@ -85,8 +85,12 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               onChangeText={setSummary}
             />
 
-            <Button title="Save" onPress={handleSave} />
-            <Button title="Cancel" onPress={onClose} />
+            <Button
+              title="Save"
+              onPress={handleSave}
+              style={{ marginBottom: 20, width: 50 }}
+            />
+            <Button title="Cancel" onPress={onClose} style={{ width: 50 }} />
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -123,6 +127,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     width: "100%",
   },
+  buttons: { marginBottom: 20, width: 50 },
 });
 
 export default EditEventModal;
