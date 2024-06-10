@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, View, TextInput, Button, StyleSheet, Text } from "react-native";
 
-const EditEventModal = ({ isVisible, event, onClose, onSave }) => {
-  const [title, setTitle] = useState(event.title);
-  const [start, setStart] = useState(event.start.toString().slice(0, 16));
-  const [end, setEnd] = useState(event.end.toString().slice(0, 16));
-  const [color, setColor] = useState(event.color);
-  const [summary, setSummary] = useState(event.summary);
+const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
+  const [title, setTitle] = useState(event?.title || "");
+  const [start, setStart] = useState(
+    event?.start ? event.start.toString().slice(0, 16) : ""
+  );
+  const [end, setEnd] = useState(
+    event?.end ? event.end.toString().slice(0, 16) : ""
+  );
+  const [color, setColor] = useState(event?.color || "");
+  const [summary, setSummary] = useState(event?.summary || "");
+
+  useEffect(() => {
+    if (event) {
+      setTitle(event.title);
+      setStart(event.start.toString().slice(0, 16));
+      setEnd(event.end.toString().slice(0, 16));
+      setColor(event.color);
+      setSummary(event.summary);
+    }
+  }, [event]);
 
   const handleSave = () => {
     onSave({

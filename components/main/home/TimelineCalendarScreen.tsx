@@ -29,6 +29,8 @@ export default class TimelineCalendarScreen extends Component {
     },
     modalVisible: false,
     selectedEvent: null,
+    isNewEvent: false,
+    newEventStartTime: null,
   };
 
   marked = {
@@ -78,73 +80,56 @@ export default class TimelineCalendarScreen extends Component {
     }
   };
 
-  approveNewEvent: TimelineProps["onBackgroundLongPressOut"] = (
-    _timeString,
-    timeObject
-  ) => {
-    const { eventsByDate } = this.state;
-
-    Alert.prompt("New Event", "Enter event title", [
-      {
-        text: "Cancel",
-        onPress: () => {
-          if (timeObject.date) {
-            eventsByDate[timeObject.date] = filter(
-              eventsByDate[timeObject.date],
-              (e) => e.id !== "draft"
-            );
-
-            this.setState({
-              eventsByDate,
-            });
-          }
-        },
+  approveNewEvent = (timeString, timeObject) => {
+    const hourString = `${(timeObject.hour + 1).toString().padStart(2, "0")}`;
+    const minutesString = `${timeObject.minutes.toString().padStart(2, "0")}`;
+    this.setState({
+      modalVisible: true,
+      selectedEvent: {
+        id: `event-${Date.now()}`,
+        start: `${timeString}`,
+        end: `${timeObject.date} ${hourString}:${minutesString}:00`,
+        title: "New event",
+        color: "white",
+        summary: "Summary of new event",
       },
-      {
-        text: "Create",
-        onPress: (eventTitle) => {
-          if (timeObject.date) {
-            const draftEvent = find(eventsByDate[timeObject.date], {
-              id: "draft",
-            });
-            if (draftEvent) {
-              draftEvent.id = undefined;
-              draftEvent.title = eventTitle ?? "New Event";
-              draftEvent.color = "lightgreen";
-              eventsByDate[timeObject.date] = [
-                ...eventsByDate[timeObject.date],
-              ];
+      isNewEvent: true,
+      newEventStartTime: timeObject.date,
+    });
+  };
 
-              this.setState({
-                eventsByDate,
-              });
-            }
-          }
-        },
-      },
-    ]);
+  handleSaveEvent = (updatedEvent) => {
+    const { eventsByDate, isNewEvent, newEventStartTime } = this.state;
+    const dateKey = CalendarUtils.getCalendarDateString(updatedEvent.start);
+
+    let updatedEvents;
+    if (isNewEvent) {
+      updatedEvents = eventsByDate[dateKey]
+        ? [...eventsByDate[dateKey], updatedEvent]
+        : [updatedEvent];
+    } else {
+      updatedEvents = eventsByDate[dateKey].map((e) => {
+        if (e.id === updatedEvent.id) {
+          return updatedEvent;
+        }
+        return e;
+      });
+    }
+
+    this.setState({
+      eventsByDate: { ...eventsByDate, [dateKey]: updatedEvents },
+      modalVisible: false,
+      selectedEvent: null,
+      isNewEvent: false,
+      newEventStartTime: null,
+    });
   };
 
   editEvent = (event) => {
     this.setState({
       modalVisible: true,
       selectedEvent: event,
-    });
-  };
-
-  handleSaveEvent = (updatedEvent) => {
-    const { eventsByDate } = this.state;
-    const dateKey = CalendarUtils.getCalendarDateString(updatedEvent.start);
-
-    const updatedEvents = eventsByDate[dateKey].map((e) => {
-      if (e.id === updatedEvent.id) {
-        return updatedEvent;
-      }
-      return e;
-    });
-
-    this.setState({
-      eventsByDate: { ...eventsByDate, [dateKey]: updatedEvents },
+      isNewEvent: false,
     });
   };
 
@@ -170,8 +155,13 @@ export default class TimelineCalendarScreen extends Component {
   };
 
   render() {
-    const { currentDate, eventsByDate, modalVisible, selectedEvent } =
-      this.state;
+    const {
+      currentDate,
+      eventsByDate,
+      modalVisible,
+      selectedEvent,
+      isNewEvent,
+    } = this.state;
 
     return (
       <CalendarProvider
@@ -202,6 +192,7 @@ export default class TimelineCalendarScreen extends Component {
             event={selectedEvent}
             onClose={() => this.setState({ modalVisible: false })}
             onSave={this.handleSaveEvent}
+            isNew={isNewEvent}
           />
         )}
       </CalendarProvider>
