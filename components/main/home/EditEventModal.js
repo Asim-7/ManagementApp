@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { CustomPicker } from "./CustomPicker";
 
 const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const [title, setTitle] = useState(event?.title || "");
@@ -84,6 +85,8 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               value={summary}
               onChangeText={setSummary}
             />
+
+            <CustomPicker style={styles.input} />
 
             <Button
               title="Save"
