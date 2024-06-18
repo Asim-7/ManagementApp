@@ -23,7 +23,8 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const [color, setColor] = useState(event?.color || "");
   const [summary, setSummary] = useState(event?.summary || "");
 
-  const [date, setDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date(start));
+  const [endDate, setEndDate] = useState(new Date(end));
 
   useEffect(() => {
     if (event) {
@@ -39,17 +40,22 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
     onSave({
       ...event,
       title,
-      start: new Date(start),
-      end: new Date(end),
+      start: startDate,
+      end: endDate,
       color,
       summary,
     });
     onClose();
   };
 
-  const onChange = (event, selectedDate) => {
+  const onStartDateChange = (event, selectedDate) => {
     const currentDate = selectedDate;
-    setDate(currentDate);
+    setStartDate(currentDate);
+  };
+
+  const onEndDateChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setEndDate(currentDate);
   };
 
   return (
@@ -71,18 +77,18 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
             >
               <DateTimePicker
                 testID="dateTimePicker"
-                value={date}
+                value={startDate}
                 mode={"date"}
                 is24Hour={true}
-                onChange={onChange}
+                onChange={onStartDateChange}
               />
 
               <DateTimePicker
                 testID="dateTimePicker"
-                value={date}
+                value={startDate}
                 mode={"time"}
                 is24Hour={true}
-                onChange={onChange}
+                onChange={onStartDateChange}
               />
             </View>
 
@@ -100,18 +106,18 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
             >
               <DateTimePicker
                 testID="dateTimePicker"
-                value={date}
+                value={endDate}
                 mode={"date"}
                 is24Hour={true}
-                onChange={onChange}
+                onChange={onEndDateChange}
               />
 
               <DateTimePicker
                 testID="dateTimePicker"
-                value={date}
+                value={endDate}
                 mode={"time"}
                 is24Hour={true}
-                onChange={onChange}
+                onChange={onEndDateChange}
               />
             </View>
 
