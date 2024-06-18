@@ -8,11 +8,12 @@ const LoginScreen = ({ navigation }) => {
         <Image
           className="mx-auto"
           source={{
-            uri: "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg",
+            uri: "https://driveplanx.nl/build/assets/full-logo-vertical-Dq5lcduf.png",
+            resizeMode: "contain",
           }}
           style={{
-            width: 250,
-            height: 150,
+            width: 310,
+            height: 140,
             borderRadius: 20,
           }}
         />
