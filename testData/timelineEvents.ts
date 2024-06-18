@@ -14,6 +14,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(-1)} 12:00:00`,
     title: "Merge Request to React Native Calendars",
     summary: "Merge Timeline Calendar to React Native Calendars",
+    color: EVENT_COLOR,
   },
   {
     id: "1",
@@ -85,6 +86,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(1)} 04:40:00`,
     title: "Tea Time with Dr. Hasan",
     summary: "Tea Time with Dr. Hasan, Talk about Project",
+    color: EVENT_COLOR,
   },
   {
     id: "10",
@@ -92,6 +94,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(1)} 01:35:00`,
     title: "Dr. Mariana Joseph",
     summary: "3412 Piedmont Rd NE, GA 3032",
+    color: EVENT_COLOR,
   },
   {
     id: "11",
@@ -115,6 +118,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(2)} 04:40:00`,
     title: "Tea Time with Colleagues",
     summary: "WeRplay",
+    color: EVENT_COLOR,
   },
   {
     id: "14",
@@ -122,6 +126,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(2)} 01:45:00`,
     title: "Lets Play Apex Legends",
     summary: "with Boys at Work",
+    color: EVENT_COLOR,
   },
   {
     id: "15",
@@ -129,6 +134,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(2)} 12:30:00`,
     title: "Dr. Mariana Joseph",
     summary: "3412 Piedmont Rd NE, GA 3032",
+    color: EVENT_COLOR,
   },
   {
     id: "16",
@@ -136,5 +142,6 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate(4)} 13:45:00`,
     title: "Merge Request to React Native Calendars",
     summary: "Merge Timeline Calendar to React Native Calendars",
+    color: EVENT_COLOR,
   },
 ];

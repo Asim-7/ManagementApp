@@ -1,9 +1,7 @@
 import groupBy from "lodash/groupBy";
 import filter from "lodash/filter";
-import find from "lodash/find";
 
 import React, { Component } from "react";
-import { Alert } from "react-native";
 import {
   ExpandableCalendar,
   TimelineEventProps,
