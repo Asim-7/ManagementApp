@@ -10,7 +10,10 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { CustomPicker } from "./CustomPicker";
+
+// Links:
+// https://github.com/react-native-datetimepicker/datetimepicker
+// https://docs.expo.dev/versions/latest/sdk/date-time-picker/
 
 const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const [title, setTitle] = useState(event?.title || "");
