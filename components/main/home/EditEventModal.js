@@ -17,23 +17,17 @@ import {
 
 const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const [title, setTitle] = useState(event?.title || "");
-  const [start, setStart] = useState(
-    event?.start ? event.start.toString().slice(0, 16) : ""
-  );
-  const [end, setEnd] = useState(
-    event?.end ? event.end.toString().slice(0, 16) : ""
-  );
   const [color, setColor] = useState(event?.color || "");
   const [summary, setSummary] = useState(event?.summary || "");
 
-  const [startDate, setStartDate] = useState(new Date(start));
-  const [endDate, setEndDate] = useState(new Date(end));
+  const [startDate, setStartDate] = useState(new Date(event.start));
+  const [endDate, setEndDate] = useState(new Date(event.end));
 
   useEffect(() => {
     if (event) {
       setTitle(event.title);
-      setStart(event.start.toString().slice(0, 16));
-      setEnd(event.end.toString().slice(0, 16));
+      setStartDate(new Date(event.start));
+      setEndDate(new Date(event.end));
       setColor(event.color);
       setSummary(event.summary);
     }
@@ -52,13 +46,14 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   };
 
   const onStartDateChange = (event, selectedDate) => {
-    const currentDate = selectedDate;
-    setStartDate(currentDate);
+    setStartDate(selectedDate);
+
+    const newEndDate = new Date(selectedDate.getTime() + 60 * 60000); // Adding 1 hour
+    setEndDate(newEndDate);
   };
 
   const onEndDateChange = (event, selectedDate) => {
-    const currentDate = selectedDate;
-    setEndDate(currentDate);
+    setEndDate(selectedDate);
   };
 
   return (
@@ -101,6 +96,7 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               style={{ marginBottom: 16, paddingHorizontal: 8 }}
             >
               <DateTimePicker
+                minimumDate={endDate}
                 testID="dateTimePicker"
                 value={endDate}
                 mode={"date"}
@@ -109,6 +105,7 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               />
 
               <DateTimePicker
+                minimumDate={endDate}
                 testID="dateTimePicker"
                 value={endDate}
                 mode={"time"}
