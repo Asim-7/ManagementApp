@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Pressable,
+} from "react-native";
 
 const LoginScreen = ({ navigation }) => {
   return (
@@ -68,15 +75,13 @@ const LoginScreen = ({ navigation }) => {
           </View>
 
           <View>
-            <TouchableOpacity className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600">
-              <Text
-                className="text-white text-center"
-                onPress={() =>
-                  navigation.navigate("Home", { email: "test@gmail.com" })
-                }
-              >
-                Sign in
-              </Text>
+            <TouchableOpacity
+              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
+              onPress={() =>
+                navigation.navigate("Home", { email: "test@gmail.com" })
+              }
+            >
+              <Text className="text-white text-center">Sign in</Text>
             </TouchableOpacity>
           </View>
         </View>
