@@ -95,13 +95,6 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               />
             </View>
 
-            <TextInput
-              style={styles.input}
-              value={start}
-              onChangeText={setStart}
-              placeholder="YYYY-MM-DD HH:MM"
-            />
-
             <Text style={styles.label}>End Time</Text>
             <View
               className="flex-row"
@@ -123,13 +116,6 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
                 onChange={onEndDateChange}
               />
             </View>
-
-            <TextInput
-              style={styles.input}
-              value={end}
-              onChangeText={setEnd}
-              placeholder="YYYY-MM-DD HH:MM"
-            />
 
             <Text style={styles.label}>Color</Text>
             <TextInput
