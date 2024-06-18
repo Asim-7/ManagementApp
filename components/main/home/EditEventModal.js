@@ -48,13 +48,21 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const onStartDateChange = (event, selectedDate) => {
     setStartDate(selectedDate);
 
-    const newEndDate = new Date(selectedDate.getTime() + 60 * 60000); // Adding 1 hour
-    setEndDate(newEndDate);
+    if (!hasAtLeastTenMinutesDifference(selectedDate, endDate)) {
+      const newEndDate = new Date(selectedDate.getTime() + 60 * 60000); // Adding 1 hour
+      setEndDate(newEndDate);
+    }
   };
 
   const onEndDateChange = (event, selectedDate) => {
     setEndDate(selectedDate);
   };
+
+  function hasAtLeastTenMinutesDifference(date1, date2) {
+    const tenMinutesInMilliseconds = 10 * 60 * 1000; // 10 minutes in milliseconds
+    const differenceInMilliseconds = Math.abs(date1 - date2);
+    return differenceInMilliseconds >= tenMinutesInMilliseconds;
+  }
 
   return (
     <Modal visible={isVisible} animationType="none" transparent={true}>
