@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { Text, Button, SafeAreaView } from "react-native";
+import { Text, Button, SafeAreaView, View } from "react-native";
 
 // Links:
 // https://github.com/react-native-datetimepicker/datetimepicker
@@ -32,7 +32,24 @@ export const CustomPicker = () => {
 
   return (
     <SafeAreaView>
-      <Button onPress={showDatepicker} title="Show date picker!" />
+      <View className="flex-row">
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={"date"}
+          is24Hour={true}
+          onChange={onChange}
+        />
+
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={"time"}
+          is24Hour={true}
+          onChange={onChange}
+        />
+      </View>
+      {/* <Button onPress={showDatepicker} title="Show date picker!" />
       <Button onPress={showTimepicker} title="Show time picker!" />
       <Text>selected: {date.toLocaleString()}</Text>
       {show && (
@@ -43,7 +60,7 @@ export const CustomPicker = () => {
           is24Hour={true}
           onChange={onChange}
         />
-      )}
+      )} */}
     </SafeAreaView>
   );
 };

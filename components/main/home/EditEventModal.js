@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import {
   Modal,
   View,
@@ -22,6 +23,8 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
   const [color, setColor] = useState(event?.color || "");
   const [summary, setSummary] = useState(event?.summary || "");
 
+  const [date, setDate] = useState(new Date());
+
   useEffect(() => {
     if (event) {
       setTitle(event.title);
@@ -44,6 +47,11 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
     onClose();
   };
 
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setDate(currentDate);
+  };
+
   return (
     <Modal visible={isVisible} animationType="none" transparent={true}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -57,6 +65,27 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
             />
 
             <Text style={styles.label}>Start Time</Text>
+            <View
+              className="flex-row"
+              style={{ marginBottom: 16, paddingHorizontal: 8 }}
+            >
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"date"}
+                is24Hour={true}
+                onChange={onChange}
+              />
+
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"time"}
+                is24Hour={true}
+                onChange={onChange}
+              />
+            </View>
+
             <TextInput
               style={styles.input}
               value={start}
@@ -65,6 +94,27 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
             />
 
             <Text style={styles.label}>End Time</Text>
+            <View
+              className="flex-row"
+              style={{ marginBottom: 16, paddingHorizontal: 8 }}
+            >
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"date"}
+                is24Hour={true}
+                onChange={onChange}
+              />
+
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"time"}
+                is24Hour={true}
+                onChange={onChange}
+              />
+            </View>
+
             <TextInput
               style={styles.input}
               value={end}
@@ -85,8 +135,6 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               value={summary}
               onChangeText={setSummary}
             />
-
-            <CustomPicker style={styles.input} />
 
             <Button
               title="Save"
