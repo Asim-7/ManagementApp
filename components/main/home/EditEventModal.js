@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import ColorSelection from "./ColorSelection";
 
 // Links:
 // https://github.com/react-native-datetimepicker/datetimepicker
@@ -128,6 +129,8 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               value={color}
               onChangeText={setColor}
             />
+
+            <ColorSelection />
 
             <Text style={styles.label}>Summary</Text>
             <TextInput
