@@ -38,11 +38,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   circle: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     borderWidth: 2,
     borderColor: "transparent",
+    marginHorizontal: 10,
   },
   selected: {
     borderColor: "gray", // Highlight selected circle with a border
