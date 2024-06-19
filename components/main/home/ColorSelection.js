@@ -3,12 +3,12 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 
 export default function ColorSelection() {
   const colors = [
-    "#FF0000",
-    "#00FF00",
-    "#0000FF",
-    "#FFFF00",
-    "#FF00FF",
-    "#00FFFF",
+    "#e6add8",
+    "#FFFFFF",
+    "skyblue",
+    "orange",
+    "mediumpurple",
+    "crimson",
   ];
   const [selectedColor, setSelectedColor] = useState(colors[0]); // Default selected color
 
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     borderWidth: 2,
-    borderColor: "transparent",
+    borderColor: "whitesmoke",
     marginHorizontal: 10,
   },
   selected: {
-    borderColor: "gray", // Highlight selected circle with a border
+    borderColor: "orange", // Highlight selected circle with a border
   },
 });
