@@ -65,6 +65,8 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
     return differenceInMilliseconds >= tenMinutesInMilliseconds;
   }
 
+  const handleColorChange = () => {};
+
   return (
     <Modal visible={isVisible} animationType="none" transparent={true}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -130,7 +132,7 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               onChangeText={setColor}
             />
 
-            <ColorSelection />
+            <ColorSelection eventColor="" onClick={handleColorChange} />
 
             <Text style={styles.label}>Summary</Text>
             <TextInput

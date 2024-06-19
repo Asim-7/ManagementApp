@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 
-export default function ColorSelection() {
+export default function ColorSelection({ eventColor, onClick }) {
   const colors = [
     "#e6add8",
     "#FFFFFF",
