@@ -65,7 +65,9 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
     return differenceInMilliseconds >= tenMinutesInMilliseconds;
   }
 
-  const handleColorChange = () => {};
+  const handleColorChange = (newColor) => {
+    setColor(newColor);
+  };
 
   return (
     <Modal visible={isVisible} animationType="none" transparent={true}>

@@ -33,7 +33,10 @@ export default function ColorSelection({ eventColor, onClick }) {
             { backgroundColor: color },
             selectedColor === color && styles.selected,
           ]}
-          onPress={() => setSelectedColor(color)}
+          onPress={() => {
+            setSelectedColor(color);
+            onClick(color);
+          }}
         />
       ))}
     </View>
