@@ -132,7 +132,7 @@ const EditEventModal = ({ isVisible, event, onClose, onSave, isNew }) => {
               onChangeText={setColor}
             />
 
-            <ColorSelection eventColor="" onClick={handleColorChange} />
+            <ColorSelection eventColor={color} onClick={handleColorChange} />
 
             <Text style={styles.label}>Summary</Text>
             <TextInput

@@ -22,7 +22,7 @@ export const timelineEvents: TimelineEventProps[] = [
     end: `${getDate()} 02:30:00`,
     title: "Meeting A",
     summary: "Summary for meeting A",
-    color: EVENT_COLOR,
+    color: "skyblue",
   },
   {
     id: "2",

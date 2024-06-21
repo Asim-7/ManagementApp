@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 
 export default function ColorSelection({ eventColor, onClick }) {
@@ -10,7 +10,18 @@ export default function ColorSelection({ eventColor, onClick }) {
     "mediumpurple",
     "crimson",
   ];
-  const [selectedColor, setSelectedColor] = useState(colors[0]); // Default selected color
+  const [selectedColor, setSelectedColor] = useState(
+    colors.includes(eventColor) ? eventColor : colors[0]
+  );
+
+  // Use useEffect to update the selected color when eventColor prop changes
+  useEffect(() => {
+    if (colors.includes(eventColor)) {
+      setSelectedColor(eventColor);
+    } else {
+      setSelectedColor(colors[0]);
+    }
+  }, [eventColor]);
 
   return (
     <View style={styles.container}>
