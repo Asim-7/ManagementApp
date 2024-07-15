@@ -15,7 +15,7 @@ const LoginScreen = ({ navigation }) => {
         <Image
           className="mx-auto"
           source={{
-            uri: "https://driveplanx.nl/build/assets/full-logo-vertical-Dq5lcduf.png",
+            uri: "https://cdn.pixabay.com/photo/2015/05/31/11/45/journal-791286_1280.jpg",
             resizeMode: "contain",
           }}
           style={{

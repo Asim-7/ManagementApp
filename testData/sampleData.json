@@ -6,28 +6,28 @@
         "name": "Dawn Bowles",
         "lesson": "Lesson 05 Apr 11:15",
         "credit": "1 hr credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2018/05/04/12/21/man-3373868_640.jpg"
       },
       {
         "id": 2,
         "name": "Emma Murray",
         "lesson": "Lesson 02 Apr 10:15",
         "credit": "2 hrs credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2020/05/01/08/29/portrait-5115894_640.jpg"
       },
       {
         "id": 3,
         "name": "James Barry",
         "lesson": "Lesson 03 Apr 09:00",
         "credit": "3 hrs credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2017/02/26/02/37/girl-2099359_640.jpg"
       },
       {
         "id": 4,
         "name": "Leonore Tauro",
         "lesson": "Lesson 02 Apr 13:30",
         "credit": "0 hrs credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2016/11/29/06/46/adult-1867889_640.jpg"
       }
     ],
     "waiting": [
@@ -36,7 +36,7 @@
         "name": "Matthew Seddon",
         "lesson": "Lesson 03 Apr 14:45",
         "credit": "1 hr credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2023/08/27/08/20/hiking-8216486_640.jpg"
       }
     ],
     "inactive": [
@@ -45,7 +45,7 @@
         "name": "Naomi Ratcliffe",
         "lesson": "Lesson 03 Apr 13:30",
         "credit": "2 hrs credit",
-        "pic": "https://guardian.ng/wp-content/uploads/2023/06/ai.jpg"
+        "pic": "https://cdn.pixabay.com/photo/2017/02/06/10/54/sad-2042536_640.jpg"
       }
     ]
   }

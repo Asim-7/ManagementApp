@@ -12,7 +12,7 @@ export default function PupilDetailsScreen() {
     <View className="flex-1 justify-center items-center bg-slate-300">
       <Pressable onPress={navigation.goBack}>
         <Text className="text-center text-2xl font-bold">
-          PupilDetailsScreen: {title}
+          PupilDetailsScreen:{"\n"} {title}
         </Text>
       </Pressable>
     </View>
