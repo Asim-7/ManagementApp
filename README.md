@@ -16,7 +16,7 @@ This is React Native scheduling app for Android and iOS. Following things to exp
 👉 Calendar events management!<br>
 
 ## Video
-https://github.com/user-attachments/assets/e8e92b71-9caf-49b9-a19b-e3ad9295d966
+https://github.com/user-attachments/assets/1e981904-d04f-46e7-96d4-a9f7efcb62f7
 
 ## Screenshots
 <div style="display: flex; justify-content: space-around;">
