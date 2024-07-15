@@ -17,7 +17,7 @@ This is React Native scheduling app for Android and iOS. Following things to exp
 
 ## Screenshots
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/6307d5aa-2ad5-46d9-837b-c5a32fc169e6" alt="Screenshot 2" width="30%">
+  <img src="https://github.com/user-attachments/assets/9396e417-2b6b-4140-a991-03ebe9615827" alt="Screenshot 2" width="30%">
   <img src="https://github.com/user-attachments/assets/50cd89ce-1a18-4999-958b-4f146ee7da78" alt="Screenshot 3" width="30%">
   <img src="https://github.com/user-attachments/assets/bf2795a8-a82a-40bb-aaef-22170e1dc618" alt="Screenshot 1" width="30%">
 </div>
